@@ -1,0 +1,17 @@
+<launch>
+  <param name="test"
+         value="test_global" />
+  <group ns="param">
+    <param name="test"
+         value="test_ns" />
+  <node name="$(anon param_test)"
+        pkg="roseus"
+        type="param-test.l"
+        clear_params="true"
+	output="screen">
+    <param name="test"
+           value="test_private" />
+  </node>
+  </group>
+</launch>
+
